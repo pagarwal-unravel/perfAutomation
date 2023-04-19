@@ -1,0 +1,1741 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="2.4" jmeter="5.4.2">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="OnPREM-my app Jobs 30 d" enabled="true">
+      <stringProp name="TestPlan.comments">This test plan was created by the BlazeMeter converter v.3.1.23. Please contact support@blazemeter.com for further support.</stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager">
+        <collectionProp name="HeaderManager.headers">
+          <elementProp name="sec-ch-ua" elementType="Header">
+            <stringProp name="Header.name">sec-ch-ua</stringProp>
+            <stringProp name="Header.value">&quot;Google Chrome&quot;;v=&quot;111&quot;, &quot;Not(A:Brand&quot;;v=&quot;8&quot;, &quot;Chromium&quot;;v=&quot;111&quot;</stringProp>
+          </elementProp>
+          <elementProp name="sec-ch-ua-mobile" elementType="Header">
+            <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+            <stringProp name="Header.value">?0</stringProp>
+          </elementProp>
+          <elementProp name="sec-ch-ua-platform" elementType="Header">
+            <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+            <stringProp name="Header.value">&quot;Windows&quot;</stringProp>
+          </elementProp>
+          <elementProp name="User-Agent" elementType="Header">
+            <stringProp name="Header.name">User-Agent</stringProp>
+            <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36</stringProp>
+          </elementProp>
+        </collectionProp>
+      </HeaderManager>
+      <hashTree/>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="BASE_URL_1" elementType="Argument">
+            <stringProp name="Argument.name">BASE_URL_1</stringProp>
+            <stringProp name="Argument.value">playground-onprem4790.unraveldata.com</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP Request Defaults" enabled="true">
+        <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+          <collectionProp name="Arguments.arguments"/>
+        </elementProp>
+        <boolProp name="HTTPSampler.concurrentDwn">true</boolProp>
+        <boolProp name="HTTPSampler.image_parser">true</boolProp>
+        <intProp name="HTTPSampler.concurrentPool">6</intProp>
+      </ConfigTestElement>
+      <hashTree/>
+      <DNSCacheManager guiclass="DNSCachePanel" testclass="DNSCacheManager" testname="DNS Cache Manager" enabled="true">
+        <collectionProp name="DNSCacheManager.servers"/>
+        <boolProp name="DNSCacheManager.clearEachIteration">true</boolProp>
+      </DNSCacheManager>
+      <hashTree/>
+      <AuthManager guiclass="AuthPanel" testclass="AuthManager" testname="HTTP Authorization Manager">
+        <collectionProp name="AuthManager.auth_list"/>
+      </AuthManager>
+      <hashTree/>
+      <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
+        <collectionProp name="CookieManager.cookies"/>
+        <boolProp name="CookieManager.clearEachIteration">true</boolProp>
+      </CookieManager>
+      <hashTree/>
+      <CacheManager guiclass="CacheManagerGui" testclass="CacheManager" testname="HTTP Cache Manager">
+        <boolProp name="clearEachIteration">true</boolProp>
+        <boolProp name="useExpires">false</boolProp>
+      </CacheManager>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <intProp name="ThreadGroup.num_threads">1</intProp>
+        <intProp name="ThreadGroup.ramp_time">1</intProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <longProp name="ThreadGroup.duration">0</longProp>
+        <longProp name="ThreadGroup.delay">0</longProp>
+      </ThreadGroup>
+      <hashTree>
+        <TransactionController guiclass="TransactionControllerGui" testname="Test" enabled="true">
+          <boolProp name="TransactionController.includeTimers">false</boolProp>
+        </TransactionController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://playground-onprem4790.unraveldata.com/api/v1/webSignIn" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;username&quot;:&quot;admin&quot;,&quot;salt&quot;:[-66762052,629708814,1575435622,1649736614,1601671830,1524699970,173330553,-1048021263],&quot;ct&quot;:&quot;{\&quot;iv\&quot;:\&quot;PyWjDAqjrqW5gzf1I5xfOw==\&quot;,\&quot;v\&quot;:1,\&quot;iter\&quot;:10000,\&quot;ks\&quot;:128,\&quot;ts\&quot;:64,\&quot;mode\&quot;:\&quot;ccm\&quot;,\&quot;adata\&quot;:\&quot;\&quot;,\&quot;cipher\&quot;:\&quot;aes\&quot;,\&quot;ct\&quot;:\&quot;jfiwx7q7+yeLA3tI0J4fc9xCdg==\&quot;}&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">api/v1/webSignIn</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json;charset=UTF-8</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">JWT</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://playground-onprem4790.unraveldata.com/#/login" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">#/login</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                  <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                  <stringProp name="Header.value">1</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy[2]/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+            <UniformRandomTimer guiclass="UniformRandomTimerGui" testclass="UniformRandomTimer" testname="Uniform Random Timer" enabled="true">
+              <doubleProp>
+                <name>RandomTimer.range</name>
+                <value>0.0</value>
+                <savedValue>0.0</savedValue>
+              </doubleProp>
+              <stringProp name="ConstantTimer.delay">0</stringProp>
+              <stringProp name="TestPlan.comments">Recorded time was 0 milliseconds</stringProp>
+            </UniformRandomTimer>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://playground-onprem4790.unraveldata.com/signInMode" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">signInMode</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImFkbWluIiwidXNlcm5hbWUiOiJhZG1pbiIsImdyb3VwcyI6W10sInRhZ3MiOnt9LCJlbWFpbCI6IiIsImNyZWF0ZWRfYXQiOjE2NTUyMDg0NjIsInVzZXJfaWQiOiIxIiwiaWF0IjoxNjgxNjQ4NTA1LCJleHAiOjE2ODE2NTU3MDV9.QK7LIDDfyC933J7UIEL3NAIEsWIwFdrmaI_n0bOmLog</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy[3]/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://playground-onprem4790.unraveldata.com/api/v1/isValidToken" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">api/v1/isValidToken</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImFkbWluIiwidXNlcm5hbWUiOiJhZG1pbiIsImdyb3VwcyI6W10sInRhZ3MiOnt9LCJlbWFpbCI6IiIsImNyZWF0ZWRfYXQiOjE2NTUyMDg0NjIsInVzZXJfaWQiOiIxIiwiaWF0IjoxNjgxNjQ4NTA1LCJleHAiOjE2ODE2NTU3MDV9.QK7LIDDfyC933J7UIEL3NAIEsWIwFdrmaI_n0bOmLog</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy[4]/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://playground-onprem4790.unraveldata.com/api/v1/days_left" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">api/v1/days_left</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImFkbWluIiwidXNlcm5hbWUiOiJhZG1pbiIsImdyb3VwcyI6W10sInRhZ3MiOnt9LCJlbWFpbCI6IiIsImNyZWF0ZWRfYXQiOjE2NTUyMDg0NjIsInVzZXJfaWQiOiIxIiwiaWF0IjoxNjgxNjQ4NTA1LCJleHAiOjE2ODE2NTU3MDV9.QK7LIDDfyC933J7UIEL3NAIEsWIwFdrmaI_n0bOmLog</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy[5]/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://playground-onprem4790.unraveldata.com/api/v1/clusters/71290726-c1aa-11ed-9f51-1e00690014bd/resources/tagged/apps?end_time=2023-04-16T18:05:16%2B05:30&amp;start_time=2023-04-16T17:05:16%2B05:30&amp;interval=2m&amp;pointInterval=120000" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="start_time" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">start_time</stringProp>
+                  <stringProp name="Argument.value">2023-04-16T17:05:16+05:30</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="pointInterval" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">pointInterval</stringProp>
+                  <stringProp name="Argument.value">120000</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="end_time" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">end_time</stringProp>
+                  <stringProp name="Argument.value">2023-04-16T18:05:16+05:30</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="interval" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">interval</stringProp>
+                  <stringProp name="Argument.value">2m</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">api/v1/clusters/71290726-c1aa-11ed-9f51-1e00690014bd/resources/tagged/apps</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImFkbWluIiwidXNlcm5hbWUiOiJhZG1pbiIsImdyb3VwcyI6W10sInRhZ3MiOnt9LCJlbWFpbCI6IiIsImNyZWF0ZWRfYXQiOjE2NTUyMDg0NjIsInVzZXJfaWQiOiIxIiwiaWF0IjoxNjgxNjQ4NTA1LCJleHAiOjE2ODE2NTU3MDV9.QK7LIDDfyC933J7UIEL3NAIEsWIwFdrmaI_n0bOmLog</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy[6]/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://playground-onprem4790.unraveldata.com/api/v1/jobs/lastChecked?end_time=2023-04-16T18:05:16%2B05:30&amp;start_time=2023-04-16T17:05:16%2B05:30&amp;interval=2m&amp;clusterName=71290726-c1aa-11ed-9f51-1e00690014bd&amp;pointInterval=120000&amp;label=Last+1+Hour" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="start_time" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">start_time</stringProp>
+                  <stringProp name="Argument.value">2023-04-16T17:05:16+05:30</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="clusterName" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">clusterName</stringProp>
+                  <stringProp name="Argument.value">71290726-c1aa-11ed-9f51-1e00690014bd</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="pointInterval" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">pointInterval</stringProp>
+                  <stringProp name="Argument.value">120000</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="end_time" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">end_time</stringProp>
+                  <stringProp name="Argument.value">2023-04-16T18:05:16+05:30</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="interval" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">interval</stringProp>
+                  <stringProp name="Argument.value">2m</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="label" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">label</stringProp>
+                  <stringProp name="Argument.value">Last 1 Hour</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">api/v1/jobs/lastChecked</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImFkbWluIiwidXNlcm5hbWUiOiJhZG1pbiIsImdyb3VwcyI6W10sInRhZ3MiOnt9LCJlbWFpbCI6IiIsImNyZWF0ZWRfYXQiOjE2NTUyMDg0NjIsInVzZXJfaWQiOiIxIiwiaWF0IjoxNjgxNjQ4NTA1LCJleHAiOjE2ODE2NTU3MDV9.QK7LIDDfyC933J7UIEL3NAIEsWIwFdrmaI_n0bOmLog</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy[7]/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://playground-onprem4790.unraveldata.com/api/v1/autoactions/recent_violations?end_time=2023-04-16T18:05:16%2B05:30&amp;start_time=2023-04-16T17:05:16%2B05:30&amp;interval=2m&amp;pointInterval=120000&amp;label=Last+1+Hour&amp;clusterUid=71290726-c1aa-11ed-9f51-1e00690014bd&amp;limit=500" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="start_time" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">start_time</stringProp>
+                  <stringProp name="Argument.value">2023-04-16T17:05:16+05:30</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="clusterUid" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">clusterUid</stringProp>
+                  <stringProp name="Argument.value">71290726-c1aa-11ed-9f51-1e00690014bd</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="pointInterval" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">pointInterval</stringProp>
+                  <stringProp name="Argument.value">120000</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="end_time" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">end_time</stringProp>
+                  <stringProp name="Argument.value">2023-04-16T18:05:16+05:30</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="limit" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">limit</stringProp>
+                  <stringProp name="Argument.value">500</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="interval" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">interval</stringProp>
+                  <stringProp name="Argument.value">2m</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="label" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">label</stringProp>
+                  <stringProp name="Argument.value">Last 1 Hour</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">api/v1/autoactions/recent_violations</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImFkbWluIiwidXNlcm5hbWUiOiJhZG1pbiIsImdyb3VwcyI6W10sInRhZ3MiOnt9LCJlbWFpbCI6IiIsImNyZWF0ZWRfYXQiOjE2NTUyMDg0NjIsInVzZXJfaWQiOiIxIiwiaWF0IjoxNjgxNjQ4NTA1LCJleHAiOjE2ODE2NTU3MDV9.QK7LIDDfyC933J7UIEL3NAIEsWIwFdrmaI_n0bOmLog</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy[8]/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://playground-onprem4790.unraveldata.com/org" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">org</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImFkbWluIiwidXNlcm5hbWUiOiJhZG1pbiIsImdyb3VwcyI6W10sInRhZ3MiOnt9LCJlbWFpbCI6IiIsImNyZWF0ZWRfYXQiOjE2NTUyMDg0NjIsInVzZXJfaWQiOiIxIiwiaWF0IjoxNjgxNjQ4NTA1LCJleHAiOjE2ODE2NTU3MDV9.QK7LIDDfyC933J7UIEL3NAIEsWIwFdrmaI_n0bOmLog</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy[9]/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://playground-onprem4790.unraveldata.com/api/v1/clusters/71290726-c1aa-11ed-9f51-1e00690014bd/nodes?end_time=2023-04-16T18:05:16%2B05:30&amp;start_time=2023-04-16T17:05:16%2B05:30&amp;interval=2m&amp;pointInterval=120000" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="start_time" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">start_time</stringProp>
+                  <stringProp name="Argument.value">2023-04-16T17:05:16+05:30</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="pointInterval" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">pointInterval</stringProp>
+                  <stringProp name="Argument.value">120000</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="end_time" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">end_time</stringProp>
+                  <stringProp name="Argument.value">2023-04-16T18:05:16+05:30</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="interval" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">interval</stringProp>
+                  <stringProp name="Argument.value">2m</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">api/v1/clusters/71290726-c1aa-11ed-9f51-1e00690014bd/nodes</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImFkbWluIiwidXNlcm5hbWUiOiJhZG1pbiIsImdyb3VwcyI6W10sInRhZ3MiOnt9LCJlbWFpbCI6IiIsImNyZWF0ZWRfYXQiOjE2NTUyMDg0NjIsInVzZXJfaWQiOiIxIiwiaWF0IjoxNjgxNjQ4NTA1LCJleHAiOjE2ODE2NTU3MDV9.QK7LIDDfyC933J7UIEL3NAIEsWIwFdrmaI_n0bOmLog</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy[10]/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://playground-onprem4790.unraveldata.com/api/v1/clusters/71290726-c1aa-11ed-9f51-1e00690014bd/resources/cpu/allocated?end_time=2023-04-16T18:05:16%2B05:30&amp;start_time=2023-04-16T17:05:16%2B05:30&amp;interval=2m&amp;pointInterval=120000" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="start_time" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">start_time</stringProp>
+                  <stringProp name="Argument.value">2023-04-16T17:05:16+05:30</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="pointInterval" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">pointInterval</stringProp>
+                  <stringProp name="Argument.value">120000</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="end_time" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">end_time</stringProp>
+                  <stringProp name="Argument.value">2023-04-16T18:05:16+05:30</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="interval" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">interval</stringProp>
+                  <stringProp name="Argument.value">2m</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">api/v1/clusters/71290726-c1aa-11ed-9f51-1e00690014bd/resources/cpu/allocated</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImFkbWluIiwidXNlcm5hbWUiOiJhZG1pbiIsImdyb3VwcyI6W10sInRhZ3MiOnt9LCJlbWFpbCI6IiIsImNyZWF0ZWRfYXQiOjE2NTUyMDg0NjIsInVzZXJfaWQiOiIxIiwiaWF0IjoxNjgxNjQ4NTA1LCJleHAiOjE2ODE2NTU3MDV9.QK7LIDDfyC933J7UIEL3NAIEsWIwFdrmaI_n0bOmLog</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy[11]/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://playground-onprem4790.unraveldata.com/api/v1/clusters/71290726-c1aa-11ed-9f51-1e00690014bd/resources/cpu/total?end_time=2023-04-16T18:05:16%2B05:30&amp;start_time=2023-04-16T17:05:16%2B05:30&amp;interval=2m&amp;pointInterval=120000" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="start_time" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">start_time</stringProp>
+                  <stringProp name="Argument.value">2023-04-16T17:05:16+05:30</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="pointInterval" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">pointInterval</stringProp>
+                  <stringProp name="Argument.value">120000</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="end_time" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">end_time</stringProp>
+                  <stringProp name="Argument.value">2023-04-16T18:05:16+05:30</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="interval" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">interval</stringProp>
+                  <stringProp name="Argument.value">2m</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">api/v1/clusters/71290726-c1aa-11ed-9f51-1e00690014bd/resources/cpu/total</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImFkbWluIiwidXNlcm5hbWUiOiJhZG1pbiIsImdyb3VwcyI6W10sInRhZ3MiOnt9LCJlbWFpbCI6IiIsImNyZWF0ZWRfYXQiOjE2NTUyMDg0NjIsInVzZXJfaWQiOiIxIiwiaWF0IjoxNjgxNjQ4NTA1LCJleHAiOjE2ODE2NTU3MDV9.QK7LIDDfyC933J7UIEL3NAIEsWIwFdrmaI_n0bOmLog</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy[12]/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://playground-onprem4790.unraveldata.com/api/v1/clusters/71290726-c1aa-11ed-9f51-1e00690014bd/resources/memory/allocated?end_time=2023-04-16T18:05:16%2B05:30&amp;start_time=2023-04-16T17:05:16%2B05:30&amp;interval=2m&amp;pointInterval=120000" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="start_time" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">start_time</stringProp>
+                  <stringProp name="Argument.value">2023-04-16T17:05:16+05:30</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="pointInterval" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">pointInterval</stringProp>
+                  <stringProp name="Argument.value">120000</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="end_time" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">end_time</stringProp>
+                  <stringProp name="Argument.value">2023-04-16T18:05:16+05:30</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="interval" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">interval</stringProp>
+                  <stringProp name="Argument.value">2m</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">api/v1/clusters/71290726-c1aa-11ed-9f51-1e00690014bd/resources/memory/allocated</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImFkbWluIiwidXNlcm5hbWUiOiJhZG1pbiIsImdyb3VwcyI6W10sInRhZ3MiOnt9LCJlbWFpbCI6IiIsImNyZWF0ZWRfYXQiOjE2NTUyMDg0NjIsInVzZXJfaWQiOiIxIiwiaWF0IjoxNjgxNjQ4NTA1LCJleHAiOjE2ODE2NTU3MDV9.QK7LIDDfyC933J7UIEL3NAIEsWIwFdrmaI_n0bOmLog</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy[13]/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://playground-onprem4790.unraveldata.com/api/v1/clusters/71290726-c1aa-11ed-9f51-1e00690014bd/resources/memory/total?end_time=2023-04-16T18:05:16%2B05:30&amp;start_time=2023-04-16T17:05:16%2B05:30&amp;interval=2m&amp;pointInterval=120000" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="start_time" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">start_time</stringProp>
+                  <stringProp name="Argument.value">2023-04-16T17:05:16+05:30</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="pointInterval" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">pointInterval</stringProp>
+                  <stringProp name="Argument.value">120000</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="end_time" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">end_time</stringProp>
+                  <stringProp name="Argument.value">2023-04-16T18:05:16+05:30</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="interval" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">interval</stringProp>
+                  <stringProp name="Argument.value">2m</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">api/v1/clusters/71290726-c1aa-11ed-9f51-1e00690014bd/resources/memory/total</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImFkbWluIiwidXNlcm5hbWUiOiJhZG1pbiIsImdyb3VwcyI6W10sInRhZ3MiOnt9LCJlbWFpbCI6IiIsImNyZWF0ZWRfYXQiOjE2NTUyMDg0NjIsInVzZXJfaWQiOiIxIiwiaWF0IjoxNjgxNjQ4NTA1LCJleHAiOjE2ODE2NTU3MDV9.QK7LIDDfyC933J7UIEL3NAIEsWIwFdrmaI_n0bOmLog</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy[14]/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://playground-onprem4790.unraveldata.com/api/v1/clusters/71290726-c1aa-11ed-9f51-1e00690014bd/resources/tagged/apps?end_time=2023-04-16T18:05:16%2B05:30&amp;start_time=2023-04-16T17:05:16%2B05:30&amp;interval=2m&amp;pointInterval=120000" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="start_time" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">start_time</stringProp>
+                  <stringProp name="Argument.value">2023-04-16T17:05:16+05:30</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="pointInterval" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">pointInterval</stringProp>
+                  <stringProp name="Argument.value">120000</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="end_time" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">end_time</stringProp>
+                  <stringProp name="Argument.value">2023-04-16T18:05:16+05:30</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="interval" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">interval</stringProp>
+                  <stringProp name="Argument.value">2m</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">api/v1/clusters/71290726-c1aa-11ed-9f51-1e00690014bd/resources/tagged/apps</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImFkbWluIiwidXNlcm5hbWUiOiJhZG1pbiIsImdyb3VwcyI6W10sInRhZ3MiOnt9LCJlbWFpbCI6IiIsImNyZWF0ZWRfYXQiOjE2NTUyMDg0NjIsInVzZXJfaWQiOiIxIiwiaWF0IjoxNjgxNjQ4NTA1LCJleHAiOjE2ODE2NTU3MDV9.QK7LIDDfyC933J7UIEL3NAIEsWIwFdrmaI_n0bOmLog</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy[15]/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://playground-onprem4790.unraveldata.com/api/v1/jobs/lastChecked?end_time=2023-04-16T18:05:22%2B05:30&amp;start_time=2023-04-16T17:05:22%2B05:30&amp;interval=2m&amp;clusterName=71290726-c1aa-11ed-9f51-1e00690014bd&amp;pointInterval=120000&amp;label=Last+1+Hour" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="start_time" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">start_time</stringProp>
+                  <stringProp name="Argument.value">2023-04-16T17:05:22+05:30</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="clusterName" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">clusterName</stringProp>
+                  <stringProp name="Argument.value">71290726-c1aa-11ed-9f51-1e00690014bd</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="pointInterval" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">pointInterval</stringProp>
+                  <stringProp name="Argument.value">120000</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="end_time" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">end_time</stringProp>
+                  <stringProp name="Argument.value">2023-04-16T18:05:22+05:30</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="interval" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">interval</stringProp>
+                  <stringProp name="Argument.value">2m</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="label" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">label</stringProp>
+                  <stringProp name="Argument.value">Last 1 Hour</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">api/v1/jobs/lastChecked</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImFkbWluIiwidXNlcm5hbWUiOiJhZG1pbiIsImdyb3VwcyI6W10sInRhZ3MiOnt9LCJlbWFpbCI6IiIsImNyZWF0ZWRfYXQiOjE2NTUyMDg0NjIsInVzZXJfaWQiOiIxIiwiaWF0IjoxNjgxNjQ4NTA1LCJleHAiOjE2ODE2NTU3MDV9.QK7LIDDfyC933J7UIEL3NAIEsWIwFdrmaI_n0bOmLog</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy[16]/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://playground-onprem4790.unraveldata.com/api/v1/autoactions/recent_violations?end_time=2023-04-16T18:05:22%2B05:30&amp;start_time=2023-04-16T17:05:22%2B05:30&amp;interval=2m&amp;pointInterval=120000&amp;label=Last+1+Hour&amp;clusterUid=71290726-c1aa-11ed-9f51-1e00690014bd&amp;limit=500" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="start_time" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">start_time</stringProp>
+                  <stringProp name="Argument.value">2023-04-16T17:05:22+05:30</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="clusterUid" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">clusterUid</stringProp>
+                  <stringProp name="Argument.value">71290726-c1aa-11ed-9f51-1e00690014bd</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="pointInterval" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">pointInterval</stringProp>
+                  <stringProp name="Argument.value">120000</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="end_time" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">end_time</stringProp>
+                  <stringProp name="Argument.value">2023-04-16T18:05:22+05:30</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="limit" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">limit</stringProp>
+                  <stringProp name="Argument.value">500</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="interval" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">interval</stringProp>
+                  <stringProp name="Argument.value">2m</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="label" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">label</stringProp>
+                  <stringProp name="Argument.value">Last 1 Hour</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">api/v1/autoactions/recent_violations</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImFkbWluIiwidXNlcm5hbWUiOiJhZG1pbiIsImdyb3VwcyI6W10sInRhZ3MiOnt9LCJlbWFpbCI6IiIsImNyZWF0ZWRfYXQiOjE2NTUyMDg0NjIsInVzZXJfaWQiOiIxIiwiaWF0IjoxNjgxNjQ4NTA1LCJleHAiOjE2ODE2NTU3MDV9.QK7LIDDfyC933J7UIEL3NAIEsWIwFdrmaI_n0bOmLog</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy[17]/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://playground-onprem4790.unraveldata.com/api/v1/license_type" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments"/>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">api/v1/license_type</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImFkbWluIiwidXNlcm5hbWUiOiJhZG1pbiIsImdyb3VwcyI6W10sInRhZ3MiOnt9LCJlbWFpbCI6IiIsImNyZWF0ZWRfYXQiOjE2NTUyMDg0NjIsInVzZXJfaWQiOiIxIiwiaWF0IjoxNjgxNjQ4NTA1LCJleHAiOjE2ODE2NTU3MDV9.QK7LIDDfyC933J7UIEL3NAIEsWIwFdrmaI_n0bOmLog</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy[18]/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://playground-onprem4790.unraveldata.com/api/v1/jobs/bystatus?end_time=2023-04-16T18:05:22%2B05:30&amp;start_time=2023-04-16T17:05:22%2B05:30&amp;interval=2m&amp;clusterName=71290726-c1aa-11ed-9f51-1e00690014bd&amp;pointInterval=120000&amp;label=Last+1+Hour&amp;kind=[%22spark%22,%22tez%22,%22mr%22,%22mapreduce_oozie5%22]" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="start_time" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">start_time</stringProp>
+                  <stringProp name="Argument.value">2023-04-16T17:05:22+05:30</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="kind" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">kind</stringProp>
+                  <stringProp name="Argument.value">[&quot;spark&quot;,&quot;tez&quot;,&quot;mr&quot;,&quot;mapreduce_oozie5&quot;]</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="clusterName" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">clusterName</stringProp>
+                  <stringProp name="Argument.value">71290726-c1aa-11ed-9f51-1e00690014bd</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="pointInterval" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">pointInterval</stringProp>
+                  <stringProp name="Argument.value">120000</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="end_time" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">end_time</stringProp>
+                  <stringProp name="Argument.value">2023-04-16T18:05:22+05:30</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="interval" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">interval</stringProp>
+                  <stringProp name="Argument.value">2m</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="label" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">label</stringProp>
+                  <stringProp name="Argument.value">Last 1 Hour</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">api/v1/jobs/bystatus</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImFkbWluIiwidXNlcm5hbWUiOiJhZG1pbiIsImdyb3VwcyI6W10sInRhZ3MiOnt9LCJlbWFpbCI6IiIsImNyZWF0ZWRfYXQiOjE2NTUyMDg0NjIsInVzZXJfaWQiOiIxIiwiaWF0IjoxNjgxNjQ4NTA1LCJleHAiOjE2ODE2NTU3MDV9.QK7LIDDfyC933J7UIEL3NAIEsWIwFdrmaI_n0bOmLog</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy[19]/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://playground-onprem4790.unraveldata.com/api/v1/jobs/finished/bystatus?end_time=2023-04-16T18:05:22%2B05:30&amp;start_time=2023-04-16T17:05:22%2B05:30&amp;interval=2m&amp;clusterName=71290726-c1aa-11ed-9f51-1e00690014bd&amp;pointInterval=120000&amp;label=Last+1+Hour&amp;kind=[%22spark%22,%22tez%22,%22mr%22,%22mapreduce_oozie5%22]" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="start_time" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">start_time</stringProp>
+                  <stringProp name="Argument.value">2023-04-16T17:05:22+05:30</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="kind" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">kind</stringProp>
+                  <stringProp name="Argument.value">[&quot;spark&quot;,&quot;tez&quot;,&quot;mr&quot;,&quot;mapreduce_oozie5&quot;]</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="clusterName" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">clusterName</stringProp>
+                  <stringProp name="Argument.value">71290726-c1aa-11ed-9f51-1e00690014bd</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="pointInterval" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">pointInterval</stringProp>
+                  <stringProp name="Argument.value">120000</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="end_time" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">end_time</stringProp>
+                  <stringProp name="Argument.value">2023-04-16T18:05:22+05:30</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="interval" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">interval</stringProp>
+                  <stringProp name="Argument.value">2m</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="label" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">label</stringProp>
+                  <stringProp name="Argument.value">Last 1 Hour</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">api/v1/jobs/finished/bystatus</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImFkbWluIiwidXNlcm5hbWUiOiJhZG1pbiIsImdyb3VwcyI6W10sInRhZ3MiOnt9LCJlbWFpbCI6IiIsImNyZWF0ZWRfYXQiOjE2NTUyMDg0NjIsInVzZXJfaWQiOiIxIiwiaWF0IjoxNjgxNjQ4NTA1LCJleHAiOjE2ODE2NTU3MDV9.QK7LIDDfyC933J7UIEL3NAIEsWIwFdrmaI_n0bOmLog</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy[20]/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://playground-onprem4790.unraveldata.com/api/v1/jobs/finished/byinefficiency?end_time=2023-04-16T18:05:22%2B05:30&amp;start_time=2023-04-16T17:05:22%2B05:30&amp;interval=2m&amp;clusterName=71290726-c1aa-11ed-9f51-1e00690014bd&amp;pointInterval=120000&amp;label=Last+1+Hour&amp;kind=[%22spark%22,%22tez%22,%22mr%22,%22mapreduce_oozie5%22]" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="start_time" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">start_time</stringProp>
+                  <stringProp name="Argument.value">2023-04-16T17:05:22+05:30</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="kind" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">kind</stringProp>
+                  <stringProp name="Argument.value">[&quot;spark&quot;,&quot;tez&quot;,&quot;mr&quot;,&quot;mapreduce_oozie5&quot;]</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="clusterName" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">clusterName</stringProp>
+                  <stringProp name="Argument.value">71290726-c1aa-11ed-9f51-1e00690014bd</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="pointInterval" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">pointInterval</stringProp>
+                  <stringProp name="Argument.value">120000</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="end_time" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">end_time</stringProp>
+                  <stringProp name="Argument.value">2023-04-16T18:05:22+05:30</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="interval" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">interval</stringProp>
+                  <stringProp name="Argument.value">2m</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="label" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">label</stringProp>
+                  <stringProp name="Argument.value">Last 1 Hour</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">api/v1/jobs/finished/byinefficiency</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImFkbWluIiwidXNlcm5hbWUiOiJhZG1pbiIsImdyb3VwcyI6W10sInRhZ3MiOnt9LCJlbWFpbCI6IiIsImNyZWF0ZWRfYXQiOjE2NTUyMDg0NjIsInVzZXJfaWQiOiIxIiwiaWF0IjoxNjgxNjQ4NTA1LCJleHAiOjE2ODE2NTU3MDV9.QK7LIDDfyC933J7UIEL3NAIEsWIwFdrmaI_n0bOmLog</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy[21]/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://playground-onprem4790.unraveldata.com/api/v1/jobs/finished/bytype?end_time=2023-04-16T18:05:22%2B05:30&amp;start_time=2023-04-16T17:05:22%2B05:30&amp;interval=2m&amp;clusterName=71290726-c1aa-11ed-9f51-1e00690014bd&amp;pointInterval=120000&amp;label=Last+1+Hour&amp;kind=[%22spark%22,%22tez%22,%22mr%22,%22mapreduce_oozie5%22]" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="start_time" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">start_time</stringProp>
+                  <stringProp name="Argument.value">2023-04-16T17:05:22+05:30</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="kind" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">kind</stringProp>
+                  <stringProp name="Argument.value">[&quot;spark&quot;,&quot;tez&quot;,&quot;mr&quot;,&quot;mapreduce_oozie5&quot;]</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="clusterName" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">clusterName</stringProp>
+                  <stringProp name="Argument.value">71290726-c1aa-11ed-9f51-1e00690014bd</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="pointInterval" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">pointInterval</stringProp>
+                  <stringProp name="Argument.value">120000</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="end_time" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">end_time</stringProp>
+                  <stringProp name="Argument.value">2023-04-16T18:05:22+05:30</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="interval" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">interval</stringProp>
+                  <stringProp name="Argument.value">2m</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="label" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">label</stringProp>
+                  <stringProp name="Argument.value">Last 1 Hour</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">api/v1/jobs/finished/bytype</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImFkbWluIiwidXNlcm5hbWUiOiJhZG1pbiIsImdyb3VwcyI6W10sInRhZ3MiOnt9LCJlbWFpbCI6IiIsImNyZWF0ZWRfYXQiOjE2NTUyMDg0NjIsInVzZXJfaWQiOiIxIiwiaWF0IjoxNjgxNjQ4NTA1LCJleHAiOjE2ODE2NTU3MDV9.QK7LIDDfyC933J7UIEL3NAIEsWIwFdrmaI_n0bOmLog</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy[22]/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://playground-onprem4790.unraveldata.com/api/v1/jobs/bystatus?end_time=2023-04-16T18:05:22%2B05:30&amp;start_time=2023-04-16T17:05:22%2B05:30&amp;interval=2m&amp;clusterName=71290726-c1aa-11ed-9f51-1e00690014bd&amp;pointInterval=120000&amp;label=Last+1+Hour&amp;kind=[%22spark%22,%22tez%22,%22mr%22,%22mapreduce_oozie5%22]" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="start_time" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">start_time</stringProp>
+                  <stringProp name="Argument.value">2023-04-16T17:05:22+05:30</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="kind" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">kind</stringProp>
+                  <stringProp name="Argument.value">[&quot;spark&quot;,&quot;tez&quot;,&quot;mr&quot;,&quot;mapreduce_oozie5&quot;]</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="clusterName" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">clusterName</stringProp>
+                  <stringProp name="Argument.value">71290726-c1aa-11ed-9f51-1e00690014bd</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="pointInterval" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">pointInterval</stringProp>
+                  <stringProp name="Argument.value">120000</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="end_time" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">end_time</stringProp>
+                  <stringProp name="Argument.value">2023-04-16T18:05:22+05:30</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="interval" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">interval</stringProp>
+                  <stringProp name="Argument.value">2m</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="label" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">label</stringProp>
+                  <stringProp name="Argument.value">Last 1 Hour</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">api/v1/jobs/bystatus</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImFkbWluIiwidXNlcm5hbWUiOiJhZG1pbiIsImdyb3VwcyI6W10sInRhZ3MiOnt9LCJlbWFpbCI6IiIsImNyZWF0ZWRfYXQiOjE2NTUyMDg0NjIsInVzZXJfaWQiOiIxIiwiaWF0IjoxNjgxNjQ4NTA1LCJleHAiOjE2ODE2NTU3MDV9.QK7LIDDfyC933J7UIEL3NAIEsWIwFdrmaI_n0bOmLog</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy[23]/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://playground-onprem4790.unraveldata.com/api/v1/jobs/finished/bystatus?end_time=2023-04-16T18:05:22%2B05:30&amp;start_time=2023-04-16T17:05:22%2B05:30&amp;interval=2m&amp;clusterName=71290726-c1aa-11ed-9f51-1e00690014bd&amp;pointInterval=120000&amp;label=Last+1+Hour&amp;kind=[%22spark%22,%22tez%22,%22mr%22,%22mapreduce_oozie5%22]" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="start_time" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">start_time</stringProp>
+                  <stringProp name="Argument.value">2023-04-16T17:05:22+05:30</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="kind" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">kind</stringProp>
+                  <stringProp name="Argument.value">[&quot;spark&quot;,&quot;tez&quot;,&quot;mr&quot;,&quot;mapreduce_oozie5&quot;]</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="clusterName" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">clusterName</stringProp>
+                  <stringProp name="Argument.value">71290726-c1aa-11ed-9f51-1e00690014bd</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="pointInterval" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">pointInterval</stringProp>
+                  <stringProp name="Argument.value">120000</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="end_time" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">end_time</stringProp>
+                  <stringProp name="Argument.value">2023-04-16T18:05:22+05:30</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="interval" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">interval</stringProp>
+                  <stringProp name="Argument.value">2m</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="label" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">label</stringProp>
+                  <stringProp name="Argument.value">Last 1 Hour</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">api/v1/jobs/finished/bystatus</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImFkbWluIiwidXNlcm5hbWUiOiJhZG1pbiIsImdyb3VwcyI6W10sInRhZ3MiOnt9LCJlbWFpbCI6IiIsImNyZWF0ZWRfYXQiOjE2NTUyMDg0NjIsInVzZXJfaWQiOiIxIiwiaWF0IjoxNjgxNjQ4NTA1LCJleHAiOjE2ODE2NTU3MDV9.QK7LIDDfyC933J7UIEL3NAIEsWIwFdrmaI_n0bOmLog</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy[24]/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://playground-onprem4790.unraveldata.com/api/v1/jobs/finished/byinefficiency?end_time=2023-04-16T18:05:22%2B05:30&amp;start_time=2023-04-16T17:05:22%2B05:30&amp;interval=2m&amp;clusterName=71290726-c1aa-11ed-9f51-1e00690014bd&amp;pointInterval=120000&amp;label=Last+1+Hour&amp;kind=[%22spark%22,%22tez%22,%22mr%22,%22mapreduce_oozie5%22]" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="start_time" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">start_time</stringProp>
+                  <stringProp name="Argument.value">2023-04-16T17:05:22+05:30</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="kind" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">kind</stringProp>
+                  <stringProp name="Argument.value">[&quot;spark&quot;,&quot;tez&quot;,&quot;mr&quot;,&quot;mapreduce_oozie5&quot;]</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="clusterName" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">clusterName</stringProp>
+                  <stringProp name="Argument.value">71290726-c1aa-11ed-9f51-1e00690014bd</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="pointInterval" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">pointInterval</stringProp>
+                  <stringProp name="Argument.value">120000</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="end_time" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">end_time</stringProp>
+                  <stringProp name="Argument.value">2023-04-16T18:05:22+05:30</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="interval" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">interval</stringProp>
+                  <stringProp name="Argument.value">2m</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="label" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">label</stringProp>
+                  <stringProp name="Argument.value">Last 1 Hour</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">api/v1/jobs/finished/byinefficiency</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImFkbWluIiwidXNlcm5hbWUiOiJhZG1pbiIsImdyb3VwcyI6W10sInRhZ3MiOnt9LCJlbWFpbCI6IiIsImNyZWF0ZWRfYXQiOjE2NTUyMDg0NjIsInVzZXJfaWQiOiIxIiwiaWF0IjoxNjgxNjQ4NTA1LCJleHAiOjE2ODE2NTU3MDV9.QK7LIDDfyC933J7UIEL3NAIEsWIwFdrmaI_n0bOmLog</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy[25]/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://playground-onprem4790.unraveldata.com/api/v1/jobs/finished/bytype?end_time=2023-04-16T18:05:22%2B05:30&amp;start_time=2023-04-16T17:05:22%2B05:30&amp;interval=2m&amp;clusterName=71290726-c1aa-11ed-9f51-1e00690014bd&amp;pointInterval=120000&amp;label=Last+1+Hour&amp;kind=[%22spark%22,%22tez%22,%22mr%22,%22mapreduce_oozie5%22]" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="start_time" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">start_time</stringProp>
+                  <stringProp name="Argument.value">2023-04-16T17:05:22+05:30</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="kind" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">kind</stringProp>
+                  <stringProp name="Argument.value">[&quot;spark&quot;,&quot;tez&quot;,&quot;mr&quot;,&quot;mapreduce_oozie5&quot;]</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="clusterName" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">clusterName</stringProp>
+                  <stringProp name="Argument.value">71290726-c1aa-11ed-9f51-1e00690014bd</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="pointInterval" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">pointInterval</stringProp>
+                  <stringProp name="Argument.value">120000</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="end_time" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">end_time</stringProp>
+                  <stringProp name="Argument.value">2023-04-16T18:05:22+05:30</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="interval" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.name">interval</stringProp>
+                  <stringProp name="Argument.value">2m</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="label" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">label</stringProp>
+                  <stringProp name="Argument.value">Last 1 Hour</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">api/v1/jobs/finished/bytype</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImFkbWluIiwidXNlcm5hbWUiOiJhZG1pbiIsImdyb3VwcyI6W10sInRhZ3MiOnt9LCJlbWFpbCI6IiIsImNyZWF0ZWRfYXQiOjE2NTUyMDg0NjIsInVzZXJfaWQiOiIxIiwiaWF0IjoxNjgxNjQ4NTA1LCJleHAiOjE2ODE2NTU3MDV9.QK7LIDDfyC933J7UIEL3NAIEsWIwFdrmaI_n0bOmLog</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy[26]/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://playground-onprem4790.unraveldata.com/api/v1/search/tags?to=2023-04-16T18:05:16%2B05:30&amp;from=2023-04-16T17:05:16%2B05:30" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="from" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">from</stringProp>
+                  <stringProp name="Argument.value">2023-04-16T17:05:16+05:30</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="to" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">to</stringProp>
+                  <stringProp name="Argument.value">2023-04-16T18:05:16+05:30</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">api/v1/search/tags</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImFkbWluIiwidXNlcm5hbWUiOiJhZG1pbiIsImdyb3VwcyI6W10sInRhZ3MiOnt9LCJlbWFpbCI6IiIsImNyZWF0ZWRfYXQiOjE2NTUyMDg0NjIsInVzZXJfaWQiOiIxIiwiaWF0IjoxNjgxNjQ4NTA1LCJleHAiOjE2ODE2NTU3MDV9.QK7LIDDfyC933J7UIEL3NAIEsWIwFdrmaI_n0bOmLog</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy[27]/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://playground-onprem4790.unraveldata.com/api/v1/apps/unifiedsearch" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;appStatus&quot;:[&quot;K&quot;,&quot;F&quot;,&quot;R&quot;,&quot;S&quot;,&quot;P&quot;,&quot;U&quot;,&quot;W&quot;],&quot;appTypes&quot;:[],&quot;size&quot;:15,&quot;start_time&quot;:&quot;2023-04-16T11:35:28.599Z&quot;,&quot;end_time&quot;:&quot;2023-04-16T12:35:28.599Z&quot;,&quot;from&quot;:0}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">api/v1/apps/unifiedsearch</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json;charset=UTF-8</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImFkbWluIiwidXNlcm5hbWUiOiJhZG1pbiIsImdyb3VwcyI6W10sInRhZ3MiOnt9LCJlbWFpbCI6IiIsImNyZWF0ZWRfYXQiOjE2NTUyMDg0NjIsInVzZXJfaWQiOiIxIiwiaWF0IjoxNjgxNjQ4NTA1LCJleHAiOjE2ODE2NTU3MDV9.QK7LIDDfyC933J7UIEL3NAIEsWIwFdrmaI_n0bOmLog</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy[28]/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://playground-onprem4790.unraveldata.com/api/v1/apps/unifiedsearch" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;appStatus&quot;:[&quot;K&quot;,&quot;F&quot;,&quot;R&quot;,&quot;S&quot;,&quot;P&quot;,&quot;U&quot;,&quot;W&quot;],&quot;appTypes&quot;:[],&quot;size&quot;:15,&quot;start_time&quot;:&quot;2023-03-17T18:05:28+05:30&quot;,&quot;end_time&quot;:&quot;2023-04-16T18:05:28+05:30&quot;,&quot;from&quot;:0}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">api/v1/apps/unifiedsearch</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/json;charset=UTF-8</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImFkbWluIiwidXNlcm5hbWUiOiJhZG1pbiIsImdyb3VwcyI6W10sInRhZ3MiOnt9LCJlbWFpbCI6IiIsImNyZWF0ZWRfYXQiOjE2NTUyMDg0NjIsInVzZXJfaWQiOiIxIiwiaWF0IjoxNjgxNjQ4NTA1LCJleHAiOjE2ODE2NTU3MDV9.QK7LIDDfyC933J7UIEL3NAIEsWIwFdrmaI_n0bOmLog</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy[29]/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="https://playground-onprem4790.unraveldata.com/api/v1/search/tags?to=2023-04-16T18:05:28%2B05:30&amp;from=2023-03-17T18:05:28%2B05:30" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="from" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">from</stringProp>
+                  <stringProp name="Argument.value">2023-03-17T18:05:28+05:30</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+                <elementProp name="to" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">true</boolProp>
+                  <stringProp name="Argument.name">to</stringProp>
+                  <stringProp name="Argument.value">2023-04-16T18:05:28+05:30</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <stringProp name="HTTPSampler.protocol">https</stringProp>
+            <stringProp name="HTTPSampler.domain">${BASE_URL_1}</stringProp>
+            <intProp name="HTTPSampler.port">0</intProp>
+            <stringProp name="HTTPSampler.path">api/v1/search/tags</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <elementProp name="HTTPSampler.header_manager" elementType="HeaderManager" guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Authorization" elementType="Header">
+                  <stringProp name="Header.name">Authorization</stringProp>
+                  <stringProp name="Header.value">JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJpZCI6ImFkbWluIiwidXNlcm5hbWUiOiJhZG1pbiIsImdyb3VwcyI6W10sInRhZ3MiOnt9LCJlbWFpbCI6IiIsImNyZWF0ZWRfYXQiOjE2NTUyMDg0NjIsInVzZXJfaWQiOiIxIiwiaWF0IjoxNjgxNjQ4NTA1LCJleHAiOjE2ODE2NTU3MDV9.QK7LIDDfyC933J7UIEL3NAIEsWIwFdrmaI_n0bOmLog</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header manager" enabled="true">
+              <collectionProp reference="../../../HTTPSamplerProxy[30]/elementProp[2]/collectionProp"/>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
